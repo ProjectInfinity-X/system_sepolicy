@@ -171,6 +171,9 @@ get_prop(system_app, usb_uvc_enabled_prop)
 # Settings and Launcher apps read pm.archiving.enabled
 get_prop(system_app, pm_archiving_enabled_prop)
 
+# selinux status
+allow system_app selinuxfs:file r_file_perms;
+
 ###
 ### Neverallow rules
 ###
