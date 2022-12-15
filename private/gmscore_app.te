@@ -150,6 +150,8 @@ get_prop(gmscore_app, virtual_ab_prop)
 # b/186488185: Allow GMSCore to read dck properties
 get_prop(gmscore_app, dck_prop)
 
+get_prop(gmscore_app, incremental_prop)
+
 # Allow GMSCore to read RKP properties for the purpose of GTS testing.
 get_prop(gmscore_app, remote_prov_prop)
 

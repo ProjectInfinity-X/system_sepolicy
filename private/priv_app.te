@@ -168,7 +168,17 @@ allowxperm priv_app apk_data_file:file ioctl {
   INCFS_IOCTL_FILL_BLOCKS
   INCFS_IOCTL_GET_BLOCK_COUNT
   INCFS_IOCTL_GET_FILLED_BLOCKS
+  F2FS_IOC_GET_FEATURES
+  F2FS_IOC_GET_COMPRESS_BLOCKS
+  F2FS_IOC_COMPRESS_FILE
+  F2FS_IOC_DECOMPRESS_FILE
+  F2FS_IOC_RELEASE_COMPRESS_BLOCKS
+  F2FS_IOC_RESERVE_COMPRESS_BLOCKS
+  FS_IOC_SETFLAGS
+  FS_IOC_GETFLAGS
 };
+
+allow priv_app proc_filesystems:file read;
 
 # allow privileged data loader apps (e.g. com.android.vending) to read logs from Incremental File System
 allow priv_app incremental_control_file:file { read getattr ioctl };
