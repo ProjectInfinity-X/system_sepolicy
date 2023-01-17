@@ -33,6 +33,15 @@ allow system_app wallpaper_file:file r_file_perms;
 # Read icon file.
 allow system_app icon_file:file r_file_perms;
 
+# allow apps like settings to check the file signature of an apk installed on
+# the Incremental File System, fill missing blocks and get the app status and loading progress
+allowxperm system_app apk_data_file:file ioctl {
+  INCFS_IOCTL_READ_SIGNATURE
+  INCFS_IOCTL_FILL_BLOCKS
+  INCFS_IOCTL_GET_BLOCK_COUNT
+  INCFS_IOCTL_GET_FILLED_BLOCKS
+};
+
 # Write to properties
 set_prop(system_app, adaptive_haptics_prop)
 set_prop(system_app, arm64_memtag_prop)
