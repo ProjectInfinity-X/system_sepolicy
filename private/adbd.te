@@ -11,10 +11,7 @@ domain_auto_trans(adbd, shell_exec, shell)
 # Allow adb to setcon() to tradeinmode.
 allow adbd self:process setcurrent;
 allow adbd adbd_tradeinmode:process dyntransition;
-
-userdebug_or_eng(`
-  allow adbd su:process dyntransition;
-')
+allow adbd su:process dyntransition;
 
 # When 'adb shell' is executed in recovery mode, adbd explicitly
 # switches into shell domain using setcon() because the shell executable
@@ -224,7 +221,7 @@ allow adbd shell_test_data_file:lnk_file create_file_perms;
 neverallow adbd { domain -crash_dump -shell -adbd_tradeinmode }:process transition;
 neverallow adbd {
     domain
-    userdebug_or_eng(`-su')
+    -su
     recovery_only(`-shell')
     -adbd_tradeinmode
 }:process dyntransition;
