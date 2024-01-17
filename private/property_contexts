@@ -778,7 +778,14 @@ ro.lmk.thrashing_limit_decay    u:object_r:lmkd_config_prop:s0 exact int
 ro.lmk.use_minfree_levels       u:object_r:lmkd_config_prop:s0 exact bool
 ro.lmk.use_new_strategy         u:object_r:lmkd_config_prop:s0 exact bool
 ro.lmk.upgrade_pressure         u:object_r:lmkd_config_prop:s0 exact int
-lmkd.reinit                     u:object_r:lmkd_prop:s0 exact int
+ro.lmk.enable_watermark_check   u:object_r:lmkd_config_prop:s0 exact bool
+ro.lmk.enable_userspace_lmk     u:object_r:lmkd_config_prop:s0 exact bool
+ro.lmk.enhance_batch_kill       u:object_r:lmkd_config_prop:s0 exact bool
+ro.lmk.super_critical           u:object_r:lmkd_config_prop:s0 exact int
+ro.lmk.psi_scrit_complete_stall_ms    u:object_r:lmkd_config_prop:s0 exact int
+ro.lmk.direct_reclaim_pressure        u:object_r:lmkd_config_prop:s0 exact int
+ro.lmk.reclaim_scan_threshold         u:object_r:lmkd_config_prop:s0 exact int
+lmkd.reinit                           u:object_r:lmkd_prop:s0 exact int
 
 ro.media.xml_variant.codecs             u:object_r:media_variant_prop:s0 exact string
 ro.media.xml_variant.codecs_performance u:object_r:media_variant_prop:s0 exact string
