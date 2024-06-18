@@ -83,6 +83,12 @@ binder_call(system_app, statsd)
 # Allow system apps to interact with incidentd
 binder_call(system_app, incidentd)
 
+# Allow system apps (Settings) to call into update_engine
+# in order to apply update to switch from 4k kernel to 16K and vice-versa
+binder_use(system_app)
+allow system_app update_engine_stable_service:service_manager find;
+binder_call(system_app, update_engine)
+
 # Allow system app to interact with Dumpstate HAL
 hal_client_domain(system_app, hal_dumpstate)
 
@@ -190,3 +196,5 @@ neverallow system_app shell_data_file:file { open read ioctl lock };
 
 # system_app should be the only domain writing the adaptive haptics prop
 neverallow { domain -init -system_app } adaptive_haptics_prop:property_service set;
+# system_app should be the only domain writing the force l3 prop
+neverallow { domain -init -system_app } drm_forcel3_prop:property_service set;
