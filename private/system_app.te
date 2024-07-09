@@ -33,6 +33,9 @@ allow system_app wallpaper_file:file r_file_perms;
 # Read icon file.
 allow system_app icon_file:file r_file_perms;
 
+# Read zram files
+allow system_app config_gz:file r_file_perms;
+
 # Write to properties
 set_prop(system_app, adaptive_haptics_prop)
 set_prop(system_app, arm64_memtag_prop)
