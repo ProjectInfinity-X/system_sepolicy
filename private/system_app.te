@@ -10,6 +10,10 @@ app_domain(system_app)
 net_domain(system_app)
 binder_service(system_app)
 
+# logging
+allow system_app logpersistd_logging_prop:file { read };
+allow system_app logpersistd_logging_prop:property_service { set };
+
 # android.ui and system.ui
 allow system_app rootfs:dir getattr;
 
