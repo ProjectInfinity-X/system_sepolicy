@@ -1264,12 +1264,6 @@ phony {
             "sepolicy_compat_test",
             "sepolicy_test",
             "sepolicy_dev_type_test",
-            "treble_sepolicy_tests_29.0",
-            "treble_sepolicy_tests_30.0",
-            "treble_sepolicy_tests_31.0",
-            "treble_sepolicy_tests_32.0",
-            "treble_sepolicy_tests_33.0",
-            "treble_sepolicy_tests_34.0",
         ],
     }) + select((
         soong_config_variable("ANDROID", "PLATFORM_SEPOLICY_VERSION"),
@@ -1279,7 +1273,6 @@ phony {
         ("202404", true, true): [],
         (default, true, true): [],
         (default, default, default): [
-            "treble_sepolicy_tests_202404",
         ],
     }) + select((
         soong_config_variable("ANDROID", "PLATFORM_SEPOLICY_VERSION"),
